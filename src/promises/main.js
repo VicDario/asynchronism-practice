@@ -14,7 +14,7 @@ somethingWillHappen()
 
 const somethingWillHappen2 = () => {
     return new Promise((resolve, reject) => {
-        if (false) {
+        if (true) {
             setTimeout(() => {
                 resolve("Hey!");
             }, 3000);
@@ -26,5 +26,9 @@ const somethingWillHappen2 = () => {
 };
 
 somethingWillHappen2()
+    .then((response) => console.log(response))
+    .catch((error) => console.error(error));
+
+Promise.all([somethingWillHappen(), somethingWillHappen2()])
     .then((response) => console.log(response))
     .catch((error) => console.error(error));
