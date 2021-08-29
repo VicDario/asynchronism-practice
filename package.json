@@ -8,6 +8,7 @@
     "promises": "node src/promises/main.js",
     "promises:challenge": "node src/promises/challenge.js",
     "async": "node src/async-await/main.js",
+    "async:challenge": "node src/async-await/challenge.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
