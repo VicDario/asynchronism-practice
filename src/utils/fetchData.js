@@ -5,10 +5,12 @@ const fetchData = (url) => {
         const xhttp = new XMLHttpRequest();
         xhttp.open('GET', url, true);
         xhttp.onreadystatechange = () => {
-            (xhttp.readyState == 4 && xhttp.status == 200)
-                ?   resolve(JSON.parse(xhttp.responseText))
-                :   reject(new Error('Error ' + url));
-        }
+            if (xhttp.readyState === 4) { 
+                (xhttp.status === 200)
+                    ? resolve(JSON.parse(xhttp.responseText))
+                    : reject(new Error('Error at ', url));
+            }
+        };
         xhttp.send();
     });
 }
